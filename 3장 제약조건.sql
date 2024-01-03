@@ -14,13 +14,14 @@ CREATE TABLE `User2` (
 );
 
 DROP TABLE `User2`;
+select* from `User2`;
 
-#실습 3-2
+#실습 3-2 기본키(Primary Key) 식별자 역할을 하는 키, 중복이나 null값 모두 입력 불가능 이순신 안들어감 중복
 INSERT INTO `User2` VALUES ('A101', '김유신', '1968-05-09', '경남 김해시');
 INSERT INTO `User2` VALUES ('A102', '김춘추', '1972-11-23', '경남 경주시');
 INSERT INTO `User2` VALUES ('A103', '장보고', '1978-03-01', '전남 완도군');
 INSERT INTO `User2` VALUES ('A105', '강감찬', '1979-08-16', '서울시 관악구');
-INSERT INTO `User2` VALUES ('A106', '이순신', '1981-05-23', '부산시 진구');
+INSERT INTO `User2` VALUES ('A105', '이순신', '1981-05-23', '부산시 진구');
 
 #실습 3-3
 CREATE TABLE `User3` (
@@ -32,13 +33,14 @@ CREATE TABLE `User3` (
 );
 
 drop table `User3`;
+select* from `User3`;
 
-#실습 3-4
+#실습 3-4 고유키(unique) 중복되지 않는 유일한 값을 입력해야함, null값 허용, 이순신 안들어감
 INSERT INTO `User3` VALUES ('A101', '김유신', '1968-05-09', '010-1234-1111', '경남 김해시');
 INSERT INTO `User3` VALUES ('A102', '김춘추', '1972-11-23', '010-1234-2222', '경남 경주시');
 INSERT INTO `User3` VALUES ('A103', '장보고', '1978-03-01', '010-1234-3333', '전남 완도군');
 INSERT INTO `User3` VALUES ('A104', '강감찬', '1979-08-16', '010-1234-4444', '서울시 관악구');
-INSERT INTO `User3` VALUES ('A105', '이순신', '1981-05-23', '010-1234-5555', '부산시 진구');
+INSERT INTO `User3` VALUES ('A105', '이순신', '1981-05-23', '010-1234-2222', '부산시 진구');
 INSERT INTO `User3` VALUES ('A106', '안중근', '1981-05-21', null, '부산시 진구');
 
 #실습 3-5
