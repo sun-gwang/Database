@@ -159,7 +159,6 @@ select curtime(); # 지금 시간
 select now();     # 지금 날짜 시간
 insert into `member` values ('a112', '유관순', '010-1234-1012', '대리', 107, now()); # 현재 시간으로 튜플 추가
 
-
 #실습 4-7
 #실습 4-8
 #실습 4-9
