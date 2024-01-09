@@ -179,14 +179,34 @@ create table city_popul (city_name char(35), population int);
 #p146 손코딩 다른 테이블의 데이터 가져오기( world.city의 테이블내용을 city_popul로)
 insert city_popul select name, population from world.city;
 
-#p111 손코딩
-#p111 손코딩
-#p111 손코딩
-#p111 손코딩
-#p111 손코딩
-#p111 손코딩
-#p111 손코딩
-#p111 손코딩
+#p147 손코딩 도시이름 seoul을 서울로 변경하기
+update city_popul set city_name = '서울' where city_name = 'Seoul';
+select * from city_popul where city_name = '서울';
+
+#p148 손코딩 한꺼번에 여러개의 업데이트 하기(New York -> 뉴욕, population을 0으로)
+update city_popul set city_name = '뉴욕', population = 0 where city_name = 'New York';
+select * from city_popul where city_name = '뉴욕'; 
+
+#p148 손코딩 where가 없는 update문 (오류)
+update city_population set city_name = '서울';
+
+#p149 손코딩
+Update city_popul set population = population/10000;
+select * from city_popul limit 5;
+
+#p149 손코딩 데이터 삭제 delete delete from 테이블이름 where 조건
+delete from city_popul where city_name like 'New%';
+
+#p177 손코딩 inner join
+use market_db;
+select * from buy inner join member on buy. mem_id = member.mem_id where buy.mem_id='GRL';
+
+#p179 손코딩
+select * from buy inner join member on buy.mem_id = member.mem_id;
+
+#p179 손코딩
+select mem_id, mem_name, prod_name, addr, concat(phone1, phone2) '연락처' from buy inner join member on buy.mem_id = member.mem_id;
+
 #p111 손코딩
 #p111 손코딩
 #p111 손코딩
