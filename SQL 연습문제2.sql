@@ -113,7 +113,7 @@ select * from bank_account where a_item_name='자유저축예금' order by a_bal
 
 # 실습 2-18 가장 많은 잔고를 보유한 자유저축 예금계좌를 조회하시오
 select * from bank_account where a_item_name = '자유저축예금' order by a_balance desc limit 1;
-select * from bank_account where a_item_name = 'S1' order by a_balance desc limit 1;
+select * from bank_account where a_item_dist = 'S1' order by a_balance desc limit 1;
 select * from bank_account where a_balance=(select max(a_balance) from bank_account where a_item_name = '자유저축예금');
 
 # 실습 2-19 거래내역에서 입금액과 출금액이 가장 큰 순서로 조회 하시오
@@ -168,7 +168,7 @@ select t_no, a_no, c_no, t_dist, a_item_name, c_name, t_amount, t_datetime
        join bank_customer as c on b.a_c_no = c.c_no
        where t_dist =1 order by t_amount desc;
 
-# 실습 2-30 거래구분이 입굼, 출금이고 개인 고객을 대상으로 거래건수를 조회 단, 거래구분은 작은순서, 거래건수는 큰 순서로 조회하시오
+# 실습 2-30 거래구분이 입금, 출금이고 개인 고객을 대상으로 거래건수를 조회 단, 거래구분은 작은순서, 거래건수는 큰 순서로 조회하시오
 select any_value(t_no), any_value(a_no), c_no, any_value(t_dist) as 구분 , any_value(a_item_name), any_value(c_name),
        count(t_no) as 거래건수 from bank_transaction as a join bank_account as b on a.t_a_no = b.a_no
 	   join bank_customer as c on b.a_c_no = c.c_no where t_dist in (1,2) and c_dist = 1 group by c_no order by 구분, 거래건수 desc;
