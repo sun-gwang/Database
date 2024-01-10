@@ -1,6 +1,12 @@
 #날짜 : 2024/01/08
 #이름 : 김선광
-#내용 : 교제 Ch03 SQL 기본문법alter
+#내용 : 교제 Ch03 SQL 기본문법
+
+create database market_db;
+create user 'Shop'@'%' identified by '1234';
+grant all privileges on merket_db.* TO 'Shop'@'%';
+flush privileges;
+
 
 #p111 손코딩 use문 (select 문 실행 전 사용할 데이터베이스 지정)
 use market_db; 
@@ -197,6 +203,40 @@ select * from city_popul limit 5;
 #p149 손코딩 데이터 삭제 delete delete from 테이블이름 where 조건
 delete from city_popul where city_name like 'New%';
 
+#159 손코딩
+use market_db;
+create table hongong4(
+`tinyint_col`  tinyint,
+`smallint_col` smallint,
+`int_col`      int,
+`bigin_col`    bigint);
+
+#p160 손코딩
+insert into hongong4 values(127,32767,2147483647,9000000000000000000); 
+
+#p160 손코딩
+create table member(
+mem_id      char(8) not null primary key,
+mem_name    varchar(10) not null, 
+mem_number  int not null, -- 인원수
+addr        char(2) not null, -- 주소
+phone1      char(3),  -- 연락처의 국번
+phone2      char(8),  -- 연락처의 나머지 전화번호
+height      smallint, -- 평균키
+debut_date  date);   -- 데뷔일자
+
+drop table member;
+
+#p164 손코딩 varchar는 16383까지
+create table big_table (
+data1 char(256),
+data2 varchar(16384) );
+
+#p111 손코딩
+
+#p111 손코딩
+#p111 손코딩
+
 #p177 손코딩 inner join
 use market_db;
 select * from buy inner join member on buy. mem_id = member.mem_id where buy.mem_id='GRL';
@@ -207,9 +247,7 @@ select * from buy inner join member on buy.mem_id = member.mem_id;
 #p179 손코딩
 select mem_id, mem_name, prod_name, addr, concat(phone1, phone2) '연락처' from buy inner join member on buy.mem_id = member.mem_id;
 
-#p111 손코딩
-#p111 손코딩
-#p111 손코딩
+
 #p111 손코딩
 #p111 손코딩
 #p111 손코딩
