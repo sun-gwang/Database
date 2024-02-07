@@ -7,7 +7,6 @@
 create table `User1`(
 `uid` varchar(10),
 `name` varchar(10),
-`birth` varchar(20),
 `hp` char(13),
 `age` int);
 
