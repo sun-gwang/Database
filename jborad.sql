@@ -2,8 +2,8 @@
 #이름 : 김선광
 #내용 : 게시판 프로젝트 데이터베이스 설계
 
-CREATE DATABASE `jborad`;
-USE `jborad`;
+CREATE DATABASE `jboard`;
+USE `jboard`;
 
 GRANT ALL PRIVILEGES ON `jboard`.* TO 'kc5353'@'%';
 FLUSH PRIVILEGES;
