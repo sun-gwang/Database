@@ -7,6 +7,7 @@
 create table `User1`(
 `uid` varchar(10),
 `name` varchar(10),
+`birth` varchar(20),
 `hp` char(13),
 `age` int);
 
@@ -68,8 +69,8 @@ create table `TblUser`(
 `user_addr` varchar(10));
 
 # 테이블 데이터 추가 1
-insert into `TblUser` values ('p101', '김유신', '010-1234-1001',25, '경남 김해시');
-insert into `TblUser` values ('p102', '김춘추', '010-1234-1002', 23, '경북 경주시');
+insert into `TblUser` (uid,name,hp,age) values ('A101', '김유신', '010-1234-1001', 25);
+insert into `TblUser` values ('A102', '김춘추', '010-1234-1002', 23, '경북 경주시');
 insert into `TblUser` (`user_id`, `user_name`, `user_age`, `user_addr`) values('p103', '장보고', 31, '전남 완도군');
 insert into `TblUser` (`user_id`, `user_name`, `user_addr`) values('p104', '강감찬', '서울시 중구');
 insert into `TblUser` (`user_id`, `user_name`, `user_hp`, `user_age`) values('p105', '이순신', '010-1234-1005', 50); 
