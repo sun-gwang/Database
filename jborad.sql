@@ -35,7 +35,7 @@ CREATE TABLE `Article`(
 	`file`	 TINYINT	DEFAULT 0,
 	`hit`		 INT DEFAULT 0,
 	`writer`	 VARCHAR(20) NOT NULL,
-	`rgip`	 VARCHAR(20) NOT NULL,
+	`regip`	 VARCHAR(20) NOT NULL,
 	`rdate`	 DATETIME	 NOT NULL,
 	FOREIGN KEY(`writer`) REFERENCES `User` (`uid`)
 );
@@ -71,5 +71,5 @@ SELECT COUNT(*) FROM `Article`;
 
 UPDATE `Article` SET `hit`=`hit` +1 WHERE `no`=1;
 
-DROP TABLE `Ariticle`;
-DROP TABLE user;
+DROP TABLE `Article`;
+DROP TABLE `file`;
