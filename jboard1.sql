@@ -2,10 +2,10 @@
 #이름 : 김선광
 #내용 : 게시판 프로젝트 데이터베이스 설계
 
-CREATE DATABASE `jboard`;
-USE `jboard`;
+CREATE DATABASE `Myjboard`;
+USE `Myjboard`;
 
-GRANT ALL PRIVILEGES ON `jboard`.* TO 'kc5353'@'%';
+GRANT ALL PRIVILEGES ON `Myjboard`.* TO 'kc5353'@'%';
 FLUSH PRIVILEGES;
 
 CREATE TABLE `User`(
@@ -19,7 +19,7 @@ CREATE TABLE `User`(
 	`zip`			CHAR(5),
 	`addr1`		VARCHAR(100),
 	`addr2`		VARCHAR(100),
-	`rgip`		VARCHAR(50),
+	`regip`		VARCHAR(50),
 	`rdate`		DATETIME 	NOT NULL,
 	`leaveDate`	DATETIME
 	
@@ -43,7 +43,8 @@ CREATE TABLE `Article`(
 
 CREATE TABLE `Terms`(
 	`terms`	 TEXT,
-	`privacy` TEXT
+	`privacy` TEXT,
+	`
 );
 
 CREATE TABLE `File` (
@@ -84,3 +85,15 @@ WHERE `parent`=3 ORDER BY `no` ASC;
 
 DROP TABLE `Ariticle`;
 DROP TABLE user;
+
+ALTER TABLE `user` ADD COLUMN agree1 BOOLEAN AFTER `rgip`;
+ALTER TABLE `user` ADD COLUMN agree2 BOOLEAN AFTER `agree1`;
+
+ALTER TABLE `user` ADD COLUMN `sms` CHAR(1) AFTER `rgip`;
+
+ALTER TABLE `user` DROP COLUMN `agree1`;
+ALTER TABLE `user` DROP COLUMN `agree2`;
+ALTER TABLE `terms` ADD COLUMN `sms` TEXT AFTER `privacy`;
+SELECT * FROM `Article` WHERE `title` LIKE '%사과%';
+
+SELECT COUNT(*) FROM `Article` WHERE `parent`=0;
