@@ -97,3 +97,5 @@ ALTER TABLE `terms` ADD COLUMN `sms` TEXT AFTER `privacy`;
 SELECT * FROM `Article` WHERE `title` LIKE '%사과%';
 
 SELECT COUNT(*) FROM `Article` WHERE `parent`=0;
+
+SELECT COUNT(*) FROM `User` WHERE `uid`=?;
